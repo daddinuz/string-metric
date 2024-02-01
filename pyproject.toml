@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "string-metric"
+version = "0.1.0"
+description = ""
+authors = ["daddinuz <daddinuz@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.1.1"
+
+[tool.poetry.scripts]
+test = 'scripts:test'
+fmt = 'scripts:fmt'
