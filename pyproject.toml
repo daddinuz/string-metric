@@ -1,3 +1,7 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
 name = "string-metric"
 version = "0.1.0"
@@ -6,16 +10,27 @@ authors = ["daddinuz <daddinuz@gmail.com>"]
 readme = "README.md"
 license = "MIT"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.scripts]
+analyzer = 'scripts:analyzer'
+"--example" = 'scripts:example'
+test = 'scripts:test'
+fmt = 'scripts:fmt'
 
 [tool.poetry.dependencies]
 python = "^3.12"
 
 [tool.poetry.group.dev.dependencies]
+pyright = "^1.1.350"
 black = "^24.1.1"
 
-[tool.poetry.scripts]
-test = 'scripts:test'
-fmt = 'scripts:fmt'
+[tool.pyright]
+pythonPlatform = "Linux"
+pythonVersion = "3.12"
+exclude = ["**/node_modules", "**/__pycache__"]
+include = ["src"]
+typeCheckingMode = "strict"
+verboseOutput = true
+reportMissingImports = true
+executionEnvironment = [
+  {root = "src"}
+]

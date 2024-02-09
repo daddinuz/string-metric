@@ -1,4 +1,4 @@
-String metric
+string metric
 =============
 
 * [String metric](https://en.wikipedia.org/w/index.php?title=String_metric&oldid=1169461566)

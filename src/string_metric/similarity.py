@@ -15,16 +15,14 @@ class Bigrams(Set[str], Hashable):
                 assert isinstance(x, str) and len(x) == 2, f"invalid bigram: `{x}`"
 
             self._delegate = s
-        elif isinstance(s, Iterable):
-            delegate = set()
+        else:
+            delegate: set[str] = set()
 
             for x in s:
                 assert isinstance(x, str) and len(x) == 2, f"invalid bigram: `{x}`"
                 delegate.add(x)
 
             self._delegate = frozenset(delegate)
-        else:
-            raise TypeError(f"unsupported conversion from type: '{type(s)}'")
 
     def __len__(self) -> int:
         return len(self._delegate)

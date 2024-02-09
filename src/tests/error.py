@@ -1,5 +1,10 @@
+from typing import Any, Callable
+
+
 class Error:
-    def __init__(self, expected, actual, callable, *args):
+    def __init__(
+        self, expected: Any, actual: Any, callable: Callable[..., Any], *args: Any
+    ):
         self._expected = expected
         self._actual = actual
         self._func = callable.__name__

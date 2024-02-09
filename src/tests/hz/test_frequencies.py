@@ -6,7 +6,7 @@ from string_metric.hz import frequencies
 
 
 class Frequencies(TestCase):
-    _COMBINATIONS = [
+    _COMBINATIONS: list[tuple[str, dict[str, int]]] = [
         ("kitten", {"k": 1, "i": 1, "t": 2, "e": 1, "n": 1}),
         ("0000", {"0": 4}),
         ("abc", {"a": 1, "b": 1, "c": 1}),
